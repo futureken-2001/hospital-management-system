@@ -1,0 +1,54 @@
+// Hospital Management System styles.
+// Bootstrap 5 is the base; small overrides below keep the clinical
+// dashboards readable on dense data tables (queue boards, lab lists).
+
+@import "bootstrap/scss/bootstrap";
+
+body {
+    min-height: 100vh;
+}
+
+.navbar-brand {
+    letter-spacing: 0.02em;
+}
+
+.table-queue td,
+.table-queue th {
+    vertical-align: middle;
+}
+
+.badge-status-waiting {
+    background-color: #6c757d;
+}
+
+.badge-status-called {
+    background-color: #0d6efd;
+}
+
+.badge-status-done,
+.badge-status-completed {
+    background-color: #198754;
+}
+
+.badge-status-pending {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.badge-status-in_progress {
+    background-color: #0dcaf0;
+    color: #212529;
+}
+
+// Printable cards (patient ID card / lab request slip) hide all chrome
+// when sent to the browser print dialog. See resources/views/print/*.
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .print-card {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+}
