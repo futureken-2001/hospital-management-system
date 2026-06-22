@@ -14,8 +14,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->trustProxies(at: '*');
         // Register the custom "role" middleware alias used throughout
         // routes/web.php to restrict access per Spatie role.
+        
         $middleware->alias([
             'role' => EnsureUserHasRole::class,
         ]);
