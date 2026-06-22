@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? config('app.name', 'Hospital Management System') }}</title>
+    <title>{{ $title ?? config('app.name', 'ALI MEDICAL SERVICES') }}</title>
 
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
 <body class="bg-light" @auth data-user-id="{{ auth()->id() }}" data-user-role="{{ auth()->user()->role }}" @endauth>
 
 @auth
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-semibold" href="{{ route('dashboard') }}">
-                🏥 {{ config('app.name') }}
-            </a>
+    <a class="navbar-brand fw-semibold d-flex align-items-center" href="{{ route('dashboard') }}">
+    <img src="{{ asset('images/logo.jpeg') }}" alt="{{ config('app.name') }}" height="32" class="me-2 rounded">
+    {{ config('app.name') }}
+</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>

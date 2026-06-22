@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Hospital Management System') }}</title>
+    
+
+<title>{{ config('app.name', 'ALI MEDICAL SERVICE') }}</title>
+
 
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
@@ -13,7 +16,10 @@
 
     <div class="w-100" style="max-width: 420px;">
         <div class="text-center text-white mb-4">
-            <h1 class="fw-bold">🏥 {{ config('app.name') }}</h1>
+          <h1 class="fw-bold d-flex align-items-center justify-content-center gap-2">
+    <img src="{{ asset('images/logo.jpeg') }}" alt="{{ config('app.name') }}" height="48" class="rounded">
+    {{ config('app.name') }}
+</h1> 
             <p class="text-white-50 mb-0">Internal staff access only</p>
         </div>
 
