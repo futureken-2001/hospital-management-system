@@ -12,10 +12,13 @@
 <body class="bg-light" @auth data-user-id="{{ auth()->id() }}" data-user-role="{{ auth()->user()->role }}" @endauth>
 
 @auth
-    <a class="navbar-brand fw-semibold d-flex align-items-center" href="{{ route('dashboard') }}">
-    <img src="{{ asset('images/logo.jpeg') }}" alt="{{ config('app.name') }}" height="32" class="me-2 rounded">
-    {{ config('app.name') }}
-</a>
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-semibold d-flex align-items-center" href="{{ route('dashboard') }}">
+                <img src="{{ asset('images/logo.jpeg') }}" alt="{{ config('app.name') }}" height="32" class="me-2 rounded">
+                {{ config('app.name') }}
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
@@ -84,7 +87,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+</nav>
 @endauth
 
 <main class="py-4">
